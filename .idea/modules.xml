@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/algoexpert.iml" filepath="$PROJECT_DIR$/algoexpert.iml" />
+      <module fileurl="file://$PROJECT_DIR$/interview-questions.iml" filepath="$PROJECT_DIR$/interview-questions.iml" />
     </modules>
   </component>
 </project>
