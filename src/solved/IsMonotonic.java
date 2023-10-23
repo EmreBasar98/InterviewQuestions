@@ -1,4 +1,3 @@
-package solved;
 
 public class IsMonotonic {
     public static void main(String[] args) {

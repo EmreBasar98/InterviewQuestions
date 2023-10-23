@@ -1,4 +1,3 @@
-package solved;
 
 public class BSTConstruction {
     public static void main(String[] args) {

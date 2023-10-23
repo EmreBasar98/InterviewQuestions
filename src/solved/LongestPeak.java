@@ -1,4 +1,3 @@
-package solved;
 
 public class LongestPeak {
     public static void main(String[] args) {

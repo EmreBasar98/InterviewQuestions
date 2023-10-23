@@ -1,4 +1,3 @@
-package solved;
 
 public class InvertBinaryTree {
 
