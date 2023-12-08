@@ -33,8 +33,8 @@ public class PhoneNumberMnemonics {
         ArrayList<String> newMnemonics = new ArrayList<>();
 
         StringBuilder sb;
-        for (String letter : map.get(phoneNumber.charAt(idx))) {
-            for (String currentMnemonic : prevMnemonics) {
+        for (String currentMnemonic : prevMnemonics) {
+            for (String letter : map.get(phoneNumber.charAt(idx))) {
                 sb = new StringBuilder(currentMnemonic);
                 sb.append(letter);
                 newMnemonics.add(sb.toString());
