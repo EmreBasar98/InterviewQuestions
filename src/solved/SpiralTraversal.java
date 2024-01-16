@@ -5,15 +5,44 @@ import java.util.List;
 public class SpiralTraversal {
     public static void main(String[] args) {
         int[][] arr = {
-                { 19, 32, 33, 34, 25, 8},
-                {16, 15, 14, 13, 12, 11},
-                {18, 31, 36, 35, 26, 9},
-                {1, 2, 3, 4, 5, 6},
-                {20, 21, 22, 23, 24, 7},
-                {17, 30, 29, 28, 27, 10}
+                {2, 5},
+                {8, 4},
+                {0, -1}
         };
-        System.out.println(spiralTraverse(arr));
+        System.out.println(spiralTraverse2(arr));
 
+    }
+
+    public static List<Integer> spiralTraverse2(int[][] array) {
+        ArrayList<Integer> res = new ArrayList<>();
+        int count = 0;
+        int maxCount = array[0].length * array.length;
+        int rowBound = array.length;
+        int colBound = array[0].length;
+
+        int[][] dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        int[] len = {colBound, rowBound, colBound , rowBound};
+        int[] current = {0, 0};
+        int lenIter = 0;
+        int dirIter = 0;
+
+        while (count < maxCount - 1) {
+            for (int i = 0; i < len[lenIter] - 1; i++) {
+                res.add(array[current[0]][current[1]]);
+                current[0] += dirs[dirIter][0];
+                current[1] += dirs[dirIter][1];
+                count++;
+            }
+            len[lenIter] -= 2;
+            lenIter = (lenIter + 1) % 4;
+            dirIter = (dirIter + 1) % 4;
+            if (dirIter == 0) {
+                current[0]++;
+                current[1]++;
+            }
+        }
+        res.add(array[current[0]][current[1]]);
+        return res;
     }
 
     public static List<Integer> spiralTraverse(int[][] array) {
