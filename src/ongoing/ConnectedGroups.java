@@ -4,9 +4,13 @@ import java.util.List;
 
 public class ConnectedGroups {
     public static void main(String[] args) {
-        List<String> related = Arrays.asList("1000001000", "1110", "0110", "0001");
+        List<String> related = Arrays.asList("1110", "0000", "0010", "1000");
         System.out.println(countGroups(related));
     }
+    //1110
+    //0110
+    //0010
+    //1000
 
     public static int countGroups(List<String> related) {
         int[][] grid = convertToGrid(related);
@@ -22,13 +26,13 @@ public class ConnectedGroups {
 
     public static int[][] convertToGrid(List<String> related) {
         int[][] grid = new int[related.size()][related.size()];
-        System.out.println(Arrays.toString(grid[1]));
         for (int i = 0; i < related.size(); i++) {
             char[] rels = related.get(i).toCharArray();
             for (int j = 0; j < rels.length; j++) {
                 grid[i][j] = Integer.parseInt(String.valueOf(rels[j]));
             }
         }
+        System.out.println(Arrays.deepToString(grid));
         return grid;
     }
 
